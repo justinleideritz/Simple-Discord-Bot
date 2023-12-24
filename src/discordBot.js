@@ -11,7 +11,7 @@ const client = new Client({
 
 //Bot start up
 const token =
-  "YOUR TOKEN"; //Add you bot token here 
+  "YOUR TOKEN"; //Enter your bot token here
 client.login(token);
 
 client.on("ready", () => {
@@ -21,9 +21,13 @@ client.on("ready", () => {
 //Bot Functionality
 
 //Word counter
-const wordToTrack = "YOURWORDTOTRACK"; //Change this to your desired word you want to track
+const wordToTrack = "test"; //change the tracker to your desired word
 let wordCount = 0;
-// Load the count from a file if it exists
+/*
+!!! IMPORTANT !!!
+Make sure you have a txt file that is called wordCount in the same folder as the discordBot.js file to load your counter to where it left off
+Load the count from a file if it exists
+*/
 fs.readFile('wordCount.txt', 'utf8', (err, data) => {
   if (!err && data) {
     wordCount = parseInt(data); // Parse the count from the file
@@ -52,7 +56,6 @@ client.on("messageCreate", (message) => {
     );
   }
   
-  
   //show all commands
   if (message.content.toLowerCase() === "!commands") {
     message.channel.send(
@@ -62,7 +65,6 @@ client.on("messageCreate", (message) => {
       !random (Example !random 10 for a random number lower than 10)`
     );
   }
-
 
   //Coinflip
   if (message.content.toLowerCase() === "!coinflip") {
