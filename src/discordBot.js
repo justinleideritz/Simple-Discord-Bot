@@ -11,7 +11,7 @@ const client = new Client({
 
 //Bot start up
 const token =
-  "MTE4ODI0Mjk2MDEyNzYzOTY2Mg.Gl07_Y.ua03vAd6MIMYl0mfEv9ztsn8hPZ9-WI3HdlLK8";
+  "YOUR TOKEN"; //Add you bot token here 
 client.login(token);
 
 client.on("ready", () => {
@@ -21,7 +21,7 @@ client.on("ready", () => {
 //Bot Functionality
 
 //Word counter
-const wordToTrack = "test";
+const wordToTrack = "YOURWORDTOTRACK"; //Change this to your desired word you want to track
 let wordCount = 0;
 // Load the count from a file if it exists
 fs.readFile('wordCount.txt', 'utf8', (err, data) => {
